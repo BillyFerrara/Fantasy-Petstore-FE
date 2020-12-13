@@ -1,11 +1,16 @@
 class Container {
     pets = []
     owners = []
-    url = ""
     pickAPet = {}
+    baseURL = "http://localhost:3000"
+    
 
     getPets() {
-        // fetch /pets
+        // Remember to uncomment / add gem "cors"
+        fetch(this.baseURL + '/pets')
+        .then(res => console.log(res))
+        .catch(err => alert("Something went wrong. Please try again"))
+        
     }
 
     renderPets() {
